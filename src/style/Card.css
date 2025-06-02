@@ -21,6 +21,7 @@
   h2 {
     text-transform: capitalize;
     font-family: "DynaPuff";
+    font-size: 1em;
     color: var(--accent-color);
   }
 }

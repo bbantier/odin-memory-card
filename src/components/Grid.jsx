@@ -23,14 +23,14 @@ export default function Grid() {
     setIds(newArray);
   };
 
-  const handleClick = () => {
-    randomizeGridLayout();
+  const handleClick = (_e, id) => {
+    setClicked([...clicked, id]);
   };
 
   return (
     <div className="grid">
       {ids.map((id) => {
-        return <Card key={id} id={id} clickFunction={handleClick} />;
+        return <Card key={id} id={id} clickFunction={(e) => handleClick(e, id)} />;
       })}
     </div>
   );

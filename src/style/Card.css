@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
+
+:root {
+  --card-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  --bg-color: #5c76f8;
+  --accent-color: #f6ce3e;
+}
+
+.card {
+  max-width: 140px;
+  padding: 20px;
+  border: 3px solid var(--bg-color);
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  border-radius: 15px;
+
+  h2 {
+    text-transform: capitalize;
+    font-family: "DynaPuff";
+    color: var(--accent-color);
+  }
+}

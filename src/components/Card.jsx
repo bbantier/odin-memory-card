@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../style/Card.css";
 
 export default function Card({id}) {
   const [data, setData] = useState({});
@@ -16,7 +17,7 @@ export default function Card({id}) {
   })
 
   return (
-    <div className="grid">
+    <div className="card">
       <img src={imgUrl + id + ".png"}></img>
       <h2>{data.name}</h2>
     </div>

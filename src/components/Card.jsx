@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../style/Card.css";
 
-export default function Card({id}) {
+export default function Card({id, clickFunction}) {
   const [data, setData] = useState({});
   const url = "https://pokeapi.co/api/v2/pokemon/";
   const imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
@@ -14,10 +14,10 @@ export default function Card({id}) {
 
   useEffect(() => {
     fetchData();
-  })
+  });
 
   return (
-    <div className="card">
+    <div onClick={clickFunction} className="card">
       <img src={imgUrl + id + ".png"}></img>
       <h2>{data.name}</h2>
     </div>

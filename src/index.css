@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: #f5f5f5;
+}
+
 body {
+  background-color: var(--bg-color);
   padding: 15px;
 }

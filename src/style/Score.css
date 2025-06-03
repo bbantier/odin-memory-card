@@ -1,0 +1,25 @@
+:root {
+  --score-color: #5c76f8;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+}
+
+.score-board * {
+  font-family: "Avenir";
+}
+
+span {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.score-p {
+  color: var(--score-color);
+  font-size: 1.2em;
+  font-weight: 700;
+}

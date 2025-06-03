@@ -7,9 +7,7 @@
 }
 
 .card {
-  max-width: 140px;
   padding: 20px;
-  border: 3px solid var(--card-color);
   background-color: var(--card-color);
   display: flex;
   flex-direction: column;
@@ -17,11 +15,22 @@
   gap: 10px;
   align-items: center;
   border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
 
   h2 {
     text-transform: capitalize;
     font-family: "DynaPuff";
     font-size: 1em;
     color: var(--accent-color);
+  }
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background-color: var(--accent-color);
+
+  h2 {
+    color: var(--card-color);
   }
 }

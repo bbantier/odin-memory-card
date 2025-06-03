@@ -24,14 +24,24 @@ export default function Game() {
     if (playedBefore(id)) {
       setBestScore(score > bestScore ? score : bestScore);
       setScore(0);
+      setClicked([]);
     } else {
       setClicked([...clicked, id]);
       setScore(score + 1);
     }
+
+    setIds(randomizeGrid(ids));
   };
 
   const playedBefore = (id) => {
     return clicked.includes(id);
+  };
+
+  const randomizeGrid = (array) => {
+    return array
+      .map((a) => ({ sort: Math.random(), value: a }))
+      .sort((a, b) => a.sort - b.sort)
+      .map((a) => a.value);
   };
 
   return (

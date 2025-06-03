@@ -14,3 +14,8 @@ body {
   background-color: var(--bg-color);
   padding: 15px;
 }
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}

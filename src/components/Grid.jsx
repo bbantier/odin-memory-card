@@ -1,27 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 import "../style/Grid.css";
 
 export default function Grid() {
-  const [ids, setIds] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
+  const [ids, setIds] = useState([]);
   const [clicked, setClicked] = useState([]);
 
-  const randomizeGridLayout = () => {
-    let newArray = [...ids];
-    let currentIndex = newArray.length;
+  useEffect(() => {
+    const selection = new Set();
 
-    while (currentIndex !== 0) {
-      const randomIndex = Math.floor(Math.random() * currentIndex);
-
-      currentIndex--;
-      [newArray[currentIndex], newArray[randomIndex]] = [
-        newArray[randomIndex],
-        newArray[currentIndex],
-      ];
+    while (selection.size < 12) {
+      const randomNumber = Math.floor(Math.random() * 151) + 1;
+      selection.add(randomNumber);
     }
 
-    setIds(newArray);
-  };
+    setIds([...selection]);
+
+  }, []);
 
   const handleClick = (_e, id) => {
     setClicked([...clicked, id]);
